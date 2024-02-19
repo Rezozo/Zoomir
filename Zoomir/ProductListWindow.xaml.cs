@@ -43,7 +43,7 @@ namespace Zoomir
             {
                 createProduct.Visibility = Visibility.Visible;
             }
-            if (OrderId != 0)
+            if (OrderId != 0 && role != "Администратор")
             {
                 showOrder.Visibility = Visibility.Visible;
             }
@@ -86,7 +86,11 @@ namespace Zoomir
 
         private void showAllOrders_Click(object sender, RoutedEventArgs e)
         {
-            
+            OrderListWindow orderListWindow = new OrderListWindow();
+            orderListWindow.UserRole = role;
+            orderListWindow.Closed += (s, args) => Close();
+            orderListWindow.Show();
+            Hide();
         }
 
         private void createProduct_Click(object sender, RoutedEventArgs e)

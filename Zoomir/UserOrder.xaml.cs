@@ -48,6 +48,11 @@ namespace Zoomir
                 changeStatusOrder.IsEnabled = false;
                 pickUpPointBox.IsEnabled = false;
             }
+
+            if (UserRole == "Администратор")
+            {
+                changeStatusOrder.Visibility = Visibility.Hidden;
+            }
         }
 
         private void LoadProducts()
@@ -156,6 +161,12 @@ namespace Zoomir
         private string AllNumbers = "0987654321";
         private void changeStatusOrder_Click(object sender, RoutedEventArgs e)
         {
+            if (Products.ToList().Count == 0)
+            {
+                MessageBox.Show("Добавьте хотя бы один товар в заказ");
+                return;
+            }
+
             Random rand = new Random();
             string code = "";
             for (int i = 0; i < 3; i++)
@@ -168,7 +179,7 @@ namespace Zoomir
             bool isShortShipment = (bool)command.ExecuteScalar();
             connection.Close();
 
-            string shipmentPeriod = "";
+            string shipmentPeriod;
             if (isShortShipment)
             {
                 shipmentPeriod = "3 дня";

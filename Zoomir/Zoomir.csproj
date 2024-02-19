@@ -107,7 +107,11 @@
     </ApplicationDefinition>
     <Compile Include="file\TicketCreater.cs" />
     <Compile Include="models\FullOrderInfo.cs" />
+    <Compile Include="models\OrderListModel.cs" />
     <Compile Include="models\ProductCountViewModel.cs" />
+    <Compile Include="OrderListWindow.xaml.cs">
+      <DependentUpon>OrderListWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProductOrderControl.xaml.cs">
       <DependentUpon>ProductOrderControl.xaml</DependentUpon>
     </Compile>
@@ -126,6 +130,10 @@
       <DependentUpon>AuthWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="OrderListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ProductListWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

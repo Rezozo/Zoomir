@@ -26,7 +26,7 @@
             <PasswordBox x:Name="passwordBox" Grid.Row="4" Margin="10,0,10,10" HorizontalAlignment="Center" Width="350px" Height="30px"/>
 
             <Button x:Name="authBtn" Content="Авторизироваться" Grid.Row="5"  HorizontalAlignment="Center" Width="150" Height="30px" Click="authBtn_Click"/>
-            <Button x:Name="guestBtn" Content="Войти как гость" Grid.Row="6" Margin="0,10,0,10" HorizontalAlignment="Center" Width="150" Height="20px" FontSize="8pt" Click="guestBtn_Click"/>
+            <Button x:Name="guestBtn" Content="Войти как гость" Grid.Row="6" Margin="0,10,0,10" HorizontalAlignment="Center" Width="150" Height="30px" FontSize="8pt" Click="guestBtn_Click"/>
         </Grid>
     </Viewbox>
 </Window>
